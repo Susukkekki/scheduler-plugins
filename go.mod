@@ -3,6 +3,7 @@ module sigs.k8s.io/scheduler-plugins
 go 1.15
 
 require (
+	github.com/go-delve/delve v1.6.0 // indirect
 	github.com/google/go-cmp v0.5.2
 	github.com/google/uuid v1.1.2
 	github.com/k8stopologyawareschedwg/noderesourcetopology-api v0.0.8
@@ -10,6 +11,8 @@ require (
 	github.com/paypal/load-watcher v0.1.1
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.6.1
+	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
+	gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2 // indirect
 	k8s.io/api v0.20.5
 	k8s.io/apiextensions-apiserver v0.0.0
 	k8s.io/apimachinery v0.20.5
