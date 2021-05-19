@@ -20,7 +20,12 @@ ARG ARCH
 ARG RELEASE_VERSION
 RUN RELEASE_VERSION=${RELEASE_VERSION} make build-scheduler.$ARCH
 
+RUN go get -u github.com/go-delve/delve/cmd/dlv
+
 FROM $ARCH/alpine:3.12
+
+RUN apk add --no-cache libc6-compat
+COPY --from=0 /go/bin/dlv /bin/
 
 COPY --from=0 /go/src/sigs.k8s.io/scheduler-plugins/bin/kube-scheduler /bin/kube-scheduler
 
